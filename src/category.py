@@ -1,7 +1,8 @@
-from src.product import Product
+#from src.product import Product
 
 
 class Category:
+    '''Создает и инициирует класс'''
     name: str
     description: str
     products: list

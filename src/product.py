@@ -1,4 +1,5 @@
 class Product:
+    '''Создает и инициирует класс'''
     name: str
     description: str
     price: float
