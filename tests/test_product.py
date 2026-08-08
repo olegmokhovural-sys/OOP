@@ -1,6 +1,7 @@
 import pytest
 from src.product import Product
 
+
 def test_product_init(product):
     assert product.name == "Iphone 15"
     assert product.description == "512GB, Gray space"
@@ -36,7 +37,7 @@ def test_product_new_product():
         "name": "Samsung Galaxy S23 Ultra",
         "description": "256GB, Серый цвет, 200MP камера",
         "price": 180000.0,
-        "quantity": 5
+        "quantity": 5,
     }
     product = Product.new_product(data)
     assert product.name == "Samsung Galaxy S23 Ultra"

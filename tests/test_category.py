@@ -2,6 +2,7 @@ import pytest
 from src.product import Product
 from src.category import Category
 
+
 def test_category_init(first_category, second_category):
     assert first_category.name == "Смартфоны"
     assert (
@@ -29,10 +30,7 @@ def test_category_add_product(first_category):
 
 def test_category_products_format(first_category):
     """Тест: формат вывода продуктов."""
-    expected = [
-        "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.",
-        "Iphone 15, 210000.0 руб. Остаток: 8 шт."
-    ]
+    expected = ["Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.", "Iphone 15, 210000.0 руб. Остаток: 8 шт."]
     assert first_category.products == expected
 
 
