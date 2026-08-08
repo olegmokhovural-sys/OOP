@@ -1,5 +1,6 @@
 class Product:
-    '''Создает и инициирует класс'''
+    """Создает и инициирует класс"""
+
     name: str
     description: str
     quantity: int
@@ -27,5 +28,5 @@ class Product:
             name=product_data["name"],
             description=product_data["description"],
             price=product_data["price"],
-            quantity=product_data["quantity"]
+            quantity=product_data["quantity"],
         )
