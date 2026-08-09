@@ -1,5 +1,5 @@
-from src.product import Product
 from src.category import Category
+from src.product import Product
 
 """Основной блок для работы приложения"""
 
