@@ -19,8 +19,7 @@ venv.bak/
 
 # Тесты и отчёты
 .pytest_cache/
-.coverage
-htmlcov/
+#.coverage
 *.log
 
 # Файлы с данными

@@ -1,8 +1,9 @@
 import pytest
 
-from src.product import Product
 from src.category import Category
-'''Фикстуры для тестов'''
+from src.product import Product
+
+"""Фикстуры для тестов"""
 
 
 @pytest.fixture

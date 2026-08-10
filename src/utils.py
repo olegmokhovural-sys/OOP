@@ -1,12 +1,12 @@
 import json
 import os
 
-from src.product import Product
 from src.category import Category
+from src.product import Product
 
 
 def read_json(path: str) -> dict:
-    '''Функция для чтения файла'''
+    """Функция для чтения файла"""
     full_path = os.path.abspath(path)
     with open(full_path, "r", encoding="UTF-8") as file:
         data = json.load(file)
