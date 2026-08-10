@@ -52,3 +52,17 @@ def test_product_private_price():
     product = Product("Test", "Description", 100.0, 5)
     with pytest.raises(AttributeError):
         product.__price
+
+
+def test_product_str(product):
+    """Тест: строковое представление продукта."""
+    expected = "Iphone 15, 210000.0 руб. Остаток: 8 шт."
+    assert str(product) == expected
+
+
+def test_product_add():
+    """Тест: сложение продуктов (стоимость на складе)."""
+    product_a = Product("Товар A", "Описание", 100, 10)
+    product_b = Product("Товар B", "Описание", 200, 2)
+    result = product_a + product_b
+    assert result == 100 * 10 + 200 * 2  # 1400

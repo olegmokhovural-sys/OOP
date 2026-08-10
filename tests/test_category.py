@@ -42,3 +42,17 @@ def test_category_private_products():
 
     with pytest.raises(AttributeError):
         category.__products
+
+
+def test_category_str(first_category):
+    """Тест: строковое представление категории."""
+    # В первой категории 2 продукта: 5 + 8 = 13
+    expected = "Смартфоны, количество продуктов: 13 шт."
+    assert str(first_category) == expected
+
+
+def test_category_str_empty():
+    """Тест: строковое представление пустой категории."""
+    category = Category("Пустая категория", "Описание", [])
+    expected = "Пустая категория, количество продуктов: 0 шт."
+    assert str(category) == expected
