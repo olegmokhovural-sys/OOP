@@ -1,5 +1,4 @@
-# from src.product import Product
-
+from src.product import Product
 
 class Category:
     """Создает и инициирует класс"""
@@ -25,12 +24,20 @@ class Category:
         self.__products.append(product)
         Category.product_count += 1
 
+
+    def __str__(self):
+        total_quantity = sum(product.quantity for product in self.__products)
+        return f"{self.name}, количество продуктов: {total_quantity} шт."
+
+
     @property
     def products(self):
         if not self.__products:
             return "В категории нет товаров"
 
-        result = []
-        for product in self.__products:
-            result.append(f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.")
-        return result
+        # result = []
+        # for product in self.__products:
+        #     result.append(f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.")
+        # return result
+
+        return [str(product) for product in self.__products]
