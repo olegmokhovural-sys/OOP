@@ -66,3 +66,27 @@ def test_product_add():
     product_b = Product("Товар B", "Описание", 200, 2)
     result = product_a + product_b
     assert result == 100 * 10 + 200 * 2  # 1400
+
+
+def test_product_add_wrong_type():
+    """Тест: сложение с неправильным типом (должен быть TypeError)."""
+    product = Product("Товар A", "Описание", 100, 10)
+    try:
+        result = product + 5
+        assert False, "Ожидалась ошибка TypeError"
+    except TypeError:
+        assert True
+
+
+def test_product_add_different_classes():
+    """Тест: сложение товаров разных классов (должен быть TypeError)."""
+    from src.product import Smartphone, LawnGrass
+
+    phone = Smartphone("iPhone 15", "...", 100000, 10, 0.9, "Pro", 256, "Black")
+    grass = LawnGrass("Газон", "...", 500, 100, "Россия", 30, "Зелёный")
+
+    try:
+        result = phone + grass
+        assert False, "Ожидалась ошибка TypeError"
+    except TypeError:
+        assert True
