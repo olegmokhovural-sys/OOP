@@ -6,7 +6,6 @@ class Category:
 
     name: str
     description: str
-    products: list
     category_count = 0
     product_count = 0
 
@@ -22,6 +21,11 @@ class Category:
         """
         Метод для добавления товара в категорию.
         """
+        if not isinstance(product, Product):
+            raise TypeError(
+                f"Можно добавлять только объекты класса Product или его наследников. "
+                f"Получен: {type(product).__name__}"
+            )
         self.__products.append(product)
         Category.product_count += 1
 
