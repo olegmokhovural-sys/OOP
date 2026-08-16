@@ -1,4 +1,23 @@
-class Product:
+from abc import ABC, abstractmethod
+
+class BaseProduct(ABC):
+    '''Абстрактный метод'''
+
+    @property
+    @abstractmethod
+    def price(self):
+        pass
+
+
+class LogMixin:
+    """Миксин для логирования в терминале создания объектов."""
+    def __init__(self, name, description, price, quantity):
+        class_name = self.__class__.__name__
+        print(f"{class_name}('{name}', '{description}', {price}, {quantity})")
+        super().__init__(name, description, price, quantity)
+
+
+class Product(LogMixin, BaseProduct):
     """Создает и инициирует класс"""
 
     name: str
