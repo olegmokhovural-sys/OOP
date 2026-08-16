@@ -90,3 +90,38 @@ def test_product_add_different_classes():
         assert False, "Ожидалась ошибка TypeError"
     except TypeError:
         assert True
+
+
+def test_product_inherits_base():
+    """Тест: Product наследует BaseProduct."""
+    from src.product import Product, BaseProduct
+
+    product = Product("Test", "Desc", 100, 5)
+    assert isinstance(product, BaseProduct)
+
+
+def test_product_implements_price():
+    """Тест: Product реализует абстрактный метод price."""
+    from src.product import Product
+
+    product = Product("Test", "Desc", 100, 5)
+    assert product.price == 100
+
+
+def test_log_mixin_output():
+    """Тест: миксин выводит логи при создании объекта."""
+    from src.product import Product
+
+    product = Product("Тестовый продукт", "Тестовое описание", 500, 10)
+    assert product.price == 500
+    assert product.quantity == 10
+
+
+def test_log_mixin_in_smartphone():
+    """Тест: миксин работает при создании Smartphone."""
+    from src.product import Smartphone
+
+    phone = Smartphone("iPhone 15", "Флагман", 100000, 10, 0.9, "Pro", 256, "Black")
+    assert phone.price == 100000
+    assert phone.quantity == 10
+    assert phone.model == "Pro"

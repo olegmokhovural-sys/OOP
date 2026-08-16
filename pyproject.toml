@@ -37,3 +37,15 @@ dev = [
     "isort (>=8.0.1,<9.0.0)",
     "mypy (>=2.3.0,<3.0.0)"
 ]
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov-report=term-missing --cov-report=html"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+omit = [
+    "src/main.py",
+    "src/utils.py",
+    "src/__init__.py",
+    "tests/*",
+]
