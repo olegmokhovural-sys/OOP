@@ -33,7 +33,6 @@ class Category:
         total_quantity = sum(product.quantity for product in self.__products)
         return f"{self.name}, количество продуктов: {total_quantity} шт."
 
-
     def middle_price(self):
         """Возвращает среднюю цену продуктов в категории."""
         if not self.__products:
@@ -43,7 +42,6 @@ class Category:
         if total_quantity == 0:
             return 0
         return total_price / total_quantity
-
 
     @property
     def products(self):
