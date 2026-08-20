@@ -56,3 +56,19 @@ def test_category_str_empty():
     category = Category("Пустая категория", "Описание", [])
     expected = "Пустая категория, количество продуктов: 0 шт."
     assert str(category) == expected
+
+
+def test_category_middle_price():
+    """Тест: средняя цена продуктов в категории."""
+    product1 = Product("Product1", "Desc1", 100, 5)
+    product2 = Product("Product2", "Desc2", 200, 3)
+    category = Category("Cat", "Desc", [product1, product2])
+
+    # (100 + 200) / (5 + 3) = 300 / 8 = 37.5
+    assert category.middle_price() == 37.5
+
+
+def test_category_middle_price_empty():
+    """Тест: средняя цена в пустой категории (должен быть 0)."""
+    category = Category("Empty", "Desc", [])
+    assert category.middle_price() == 0
