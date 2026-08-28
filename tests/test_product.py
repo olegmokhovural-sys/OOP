@@ -125,3 +125,12 @@ def test_log_mixin_in_smartphone():
     assert phone.price == 100000
     assert phone.quantity == 10
     assert phone.model == "Pro"
+
+
+def test_product_zero_quantity():
+    """Тест: создание продукта с нулевым количеством (должен быть ValueError)."""
+    try:
+        product = Product("Test", "Desc", 100, 0)
+        assert False, "Ожидалась ошибка ValueError"
+    except ValueError:
+        assert True
